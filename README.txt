@@ -2,6 +2,8 @@
 
 15-Puzzle Solver Using Branch And Bound adalah program untuk menyelesaikan 15-Puzzle dengan memperhatikan fungsi cost dan level setiap simpul. Program ini pada dasarnya adalah BFS namun terdapat prioritas saat memasukkan ke dalam queue.
 
+Pada dasarnya algoritma Branch and Bound adalah suatu algoritma pencarian solusi yang digunakan untuk persoalan optimisasi. Lebih rinci untuk meminimalkan atau memaksimalkan suatu fungsi objektif sambil tidak melanggar batasan persoalan. Algoritma memiliki suatu fungsi pembatasan yang berguna untuk “memangkas” jalur yang dianggap tidak mengarah ke suatu solusi.
+
 #Pada program ini diset default ukuran puzzle adalah 4x4
 Jika anda ingin mengganti ukuran puzzle silahkan ubah nilai pada N (line 6)
 
