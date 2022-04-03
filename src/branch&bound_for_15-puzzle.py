@@ -54,7 +54,7 @@ def display_kurang(matrix):
     kurang.sort() #sort fungsi kurang ke-i
     for k in range(N*N):
         print("Nilai dari fungsi Kurang(" + str(kurang[k][0])+"):" ,kurang[k][1])
-def cost(matrix): #tingkat start dari 1
+def cost(matrix): 
     count = 0
     for i in range(N):
         for j in range(N):
@@ -66,7 +66,6 @@ def punyasolusi(matrix):
         return True
     else:
         return False
-# queue
 class Node:
     def __init__(self, parent, matrix, cost, blank, level,command):
         #parent
@@ -81,12 +80,8 @@ class Node:
         self.level = level
         # arah geraknya
         self.command= command
-    #priority queue
-    def __lt__(self, other): # prioritas cost lalu level
+    def __lt__(self, other):
         return(self.cost+self.level <= other.cost + other.level)
-        # if self.cost == other.cost:
-        #     return self.level < other.level 
-        # return self.cost < other.cost
 def isOnMatrix(blank):
     return 0 <= blank[0] < N and 0 <= blank[1] < N
 def display(matrix):
@@ -111,7 +106,7 @@ def solve(matrix,blank):
     nodes = queue.PriorityQueue()
     visited.add(tuple(np.reshape(matrix,16)))
     totalnodes=1
-    # create root node
+    #root node
     rootcost = cost(matrix) # root cost
     root = Node(None,matrix, rootcost, blank, 0,"Posisi Awal")
     nodes.put(root)
@@ -133,7 +128,6 @@ def solve(matrix,blank):
                 print("")
                 print("Berikut Langkah Menyelesaikan : ")
                 print_path(current)
-                #return current.level, stop - start, len(visited)
                 print("Level Akhir: ",current.level)
                 print("Waktu yang dibutuhkan: ",stop - start)
                 print("Jumlah Simpul yang dibangkitkan:", totalnodes)
